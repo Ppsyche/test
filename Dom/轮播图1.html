@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播图</title>
+	<style>
+		div{
+			width: 600px;
+			height: 400px;
+			margin-top: 100px;
+			position: relative;
+		}
+		img{
+			width: 600px;
+			height: 400px;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		ul{
+			z-index: 5;
+			
+			color: #fff;
+			position: absolute;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			bottom: 8px;
+		}
+		li{
+			float: left;
+			/*margin: 5px;*/
+			padding: 3px 5px;
+			margin-right: 3px;
+			display: inline-block;
+			background: #000;
+			font-weight: 800;
+		}
+		#ul1{
+			left: 8px;
+		}
+		#ul2{
+			right: 8px;
+		}
+		.orange{
+			background: orange;
+		}
+		.img{
+			z-index: 3;
+		}
+	</style>
+</head>
+<body>
+	<center>
+		<div id="div">
+			<img src="img/2.jpg" alt="图1" class="img">
+			<img src="img/3.jpg" alt="图2">
+			<img src="img/4.jpg" alt="图3">
+			<img src="img/5.jpg" alt="图4">
+			<ul id="ul1">
+				<li><</li>
+				<li>></li>
+			</ul>
+			<ul id="ul2">
+				<li class="orange">1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+			</ul>
+		</div>
+	</center>
+	<script>
+		var aImg = document.getElementsByTagName('img'),
+			oUl1 = document.getElementById('ul1'),
+			aLi1 = oUl1.getElementsByTagName('li'),
+			oUl2 = document.getElementById('ul2'),
+			aLi2 = oUl2.getElementsByTagName('li'),
+			oDiv = document.getElementById('div');
+		var timer;
+		for (var i = 0; i < aLi2.length; i++) {
+			aLi2[i].index = i;			
+			aLi2[i].onclick = function(){
+				//aImg[this.index].style.z-index = '3';
+				for (var j = 0; j < aImg.length; j++) {
+					//aImg[j].style.z-index = '1';
+					aImg[j].className = '';
+					aLi2[j].className = '';
+				}
+				aImg[this.index].className = "img";
+				this.className = 'orange';
+				window.clearInterval(timer);
+				timer = setInterval('go()',2000);
+			}
+		}
+		for (var i = 0; i < aLi1.length; i++) {
+			aLi1[i].index = i;
+			aLi1[i].onclick = function(){
+				for (var j = 0; j < aImg.length; j++) {
+					if(aImg[j].className == 'img'){
+						aImg[j].className = '';
+						aLi2[j].className = '';
+						if(this.index == 0){
+							aImg[(j+3)%4].className = 'img';
+							aLi2[(j+3)%4].className = 'orange';
+						}
+						else{
+							aImg[(j+1)%4].className = 'img';
+							aLi2[(j+1)%4].className = 'orange';
+						}					
+						break;
+					}
+				}
+				window.clearInterval(timer);
+				timer = setInterval('go()',2000);
+			}
+		}
+		function go(){
+			for (var i = 0; i < aImg.length; i++) {
+				if(aImg[i].className == 'img'){
+					aImg[i].className = '';
+					aLi2[i].className = '';
+					aImg[(i+1)%4].className = 'img';
+					aLi2[(i+1)%4].className = 'orange';
+					break;
+				}
+			}
+		}
+		timer = setInterval('go()',2000);
+		oDiv.onmouseover = function(){
+			clearInterval(timer);
+		}
+		oDiv.onmouseout = function(){
+			timer = setInterval('go()',2000);
+		}
+	</script>
+</body>
+</html>
+
