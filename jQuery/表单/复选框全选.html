@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>复选框全选</title>
+	<style>
+		.btn-box input{
+			width: 70px;
+		}
+		label{
+			margin: 0;
+		}
+	</style>
+	<script src="../jquery-1.12.4.min.js"></script>
+	<script>
+		$(function(){
+			$("input[name='sports']").on('click',function(){
+				var flag = true;
+				$("input[name='sports']").each(function(){
+					if(!this.checked){
+						flag = false;
+					}
+				})
+				if(flag){
+					$("#all").prop("checked",true);
+				}else{
+					$("#all").prop("checked",false);
+				}
+			})
+			$("#all").on('click',function(){
+				if(this.checked){
+					$("input[name='sports']").each(function(){
+						this.checked = true;
+					})
+				}else{
+					$("input[name='sports']").each(function(){
+						this.checked = false;
+					})
+				}
+			})
+		
+		})
+	</script>
+</head>
+<body>
+	<form action="" method="post">
+		<p>你喜欢的运动是？
+			<input type="checkbox" name="all-sports" id="all"><label for="all">全选</label>
+		</p>
+		<p>
+			<input type="checkbox" name="sports" id="fb" value="足球"><label for="fb">足球</label>
+			<input type="checkbox" name="sports" id="bb" value="篮球"><label for="bb">篮球</label>
+			<input type="checkbox" name="sports" id="tn" value="网球"><label for="tn">网球</label>
+			<input type="checkbox" name="sports" id="tt" value="乒乓球"><label for="tt">乒乓球</label>
+			<input type="checkbox" name="sports" id="bm" value="羽毛球"><label for="bm">羽毛球</label>
+		</p>
+		<p class="btn-box">
+			<input type="button" id="send" value="提交">
+		</p>
+
+	</form>
+</body>
+</html>
