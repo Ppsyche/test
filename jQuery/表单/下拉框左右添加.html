@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		select{
+			width: 130px;
+			height: 200px;
+			outline: none;
+		}
+		input{
+			display: block;
+			width: 130px;
+			/*margin: 5px 20px;*/
+			background: #898989;
+			color: #fff;
+			padding: 5px;
+			outline: none;
+			border: 0;
+			margin-top: 5px;
+		}
+		input:active{
+			background: #3c3c3c;
+		}
+		.box{
+			float: left;
+			margin-left: 10px;
+		}
+	</style>
+	<script src="../jquery-1.12.4.min.js"></script>
+	<script>
+		$(function(){
+			$("#add").on('click',function(){
+				$("#left-select option:selected").appendTo("#right-select");
+			})
+			$("#add-all").on('click',function(){
+				$("#left-select option").appendTo("#right-select");
+			})
+			$("#del").on('click',function(){
+				$("#right-select option:selected").appendTo("#left-select");
+			})
+			$("#del-all").on('click',function(){
+				$("#right-select option").appendTo("#left-select");
+			})
+			$("#left-select").on('dblclick',function(){
+				$("option:selected",this).appendTo("#right-select");
+			})
+			$("#right-select").on('dblclick',function(){
+				$("option:selected",this).appendTo("#left-select");
+			})
+		})
+	</script>
+</head>
+<body>
+	<div class="box">
+		<select id="left-select" multiple="multiple">
+			<option value="1">选项1</option>
+			<option value="2">选项2</option>
+			<option value="3">选项3</option>
+			<option value="4">选项4</option>
+			<option value="5">选项5</option>
+			<option value="6">选项6</option>
+			<option value="7">选项7</option>
+			<option value="8">选项8</option>
+		</select>
+		<input type="button" id="add" value="添&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;加&rarr;">
+		<input type="button" id="add-all" value="全部添加&rarr;">
+	</div>
+	<div class="box">
+		<select id="right-select" multiple="multiple">
+			<option value="9">选项9</option>
+		</select>
+		<input type="button" id="del" value="&larr;删&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;除">
+		<input type="button" id="del-all" value="&larr;全部删除">
+	</div>
+</body>
+</html>
