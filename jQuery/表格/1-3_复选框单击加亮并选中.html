@@ -25,18 +25,21 @@
 		}
 		.selected{
 			background: #FF6500;
+			color: #fff;
 		}
 	</style>
 	<script src="../jquery-1.12.4.min.js"></script>
 	<script>
 		$(function(){
 			$("tbody>tr").on('click',function(){
-				if($(this).hasClass("selected")){
-				//if($("input",this).is("input[checked='checked']")){
-					$(this).removeClass("selected").find("input").prop("checked",false);
-				}else{
-					$(this).addClass("selected").find("input").prop("checked",true);
-				}
+				//方法1
+				// if($(this).hasClass("selected")){
+				// 	$(this).removeClass("selected").find("input").prop("checked",false);
+				// }else{
+				// 	$(this).addClass("selected").find("input").prop("checked",true);
+				// }
+				// 方法2
+				$(this).toggleClass("selected").find("input").prop("checked",$(this).hasClass("selected"));
 			})
 		})
 	</script>
@@ -54,7 +57,7 @@
 			<tr><td><input type="checkbox" name="choice" value="" ></td>
 				<td>王五</td><td>男</td><td>湖南长沙</td></tr>
 			<tr><td><input type="checkbox" name="choice" value="" /></td>
-				<td>找六</td><td>男</td><td>浙江温州</td></tr>
+				<td>赵六</td><td>男</td><td>浙江温州</td></tr>
 			<tr><td><input type="checkbox" name="choice" value="" /></td>
 				<td>Rain</td><td>男</td><td>浙江杭州</td></tr>			
 			<tr><td><input type="checkbox" name="choice" value="" /></td>
