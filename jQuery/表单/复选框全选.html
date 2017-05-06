@@ -38,7 +38,15 @@
 					})
 				}
 			})
-		
+			$("#send").on('click',function(){
+				var str = "你喜欢的运动是：\r\n";
+				$("input[name='sports']").each(function(){
+					if(this.checked){
+						str += $(this).attr("value") + " ";
+					}
+				})
+				alert(str);
+			})
 		})
 	</script>
 </head>

@@ -14,17 +14,22 @@
 			$("#all").on('click',function(){
 				$("input[name='sports']").prop("checked",true);
 			})
-		})
-		$(function(){
 			$("#not").on('click',function(){
 				$("input[name='sports']").prop("checked",false);
 			})
-		})
-		$(function(){
 			$("#reverse").on('click',function(){
 				$("input[name='sports']").each(function(){
 					this.checked = !this.checked;
 				})
+			})
+			$("#send").on('click',function(){
+				var str = "你喜欢的运动是：\r\n";
+				$("input[name='sports']").each(function(){
+					if(this.checked){
+						str += $(this).attr("value") + " ";
+					}
+				})
+				alert(str);
 			})
 		})
 	</script>
