@@ -32,22 +32,22 @@
 	<script>
 		$(function(){
 			$("#add").on('click',function(){
-				$("#left-select option:selected").appendTo("#right-select");
+				$("#left-select option:selected").appendTo("#right-select").removeProp('selected');
 			})
 			$("#add-all").on('click',function(){
 				$("#left-select option").appendTo("#right-select");
 			})
 			$("#del").on('click',function(){
-				$("#right-select option:selected").appendTo("#left-select");
+				$("#right-select option:selected").appendTo("#left-select").removeProp('selected');
 			})
 			$("#del-all").on('click',function(){
 				$("#right-select option").appendTo("#left-select");
 			})
 			$("#left-select").on('dblclick',function(){
-				$("option:selected",this).appendTo("#right-select");
+				$("option:selected",this).appendTo("#right-select").removeProp('selected');
 			})
 			$("#right-select").on('dblclick',function(){
-				$("option:selected",this).appendTo("#left-select");
+				$("option:selected",this).appendTo("#left-select").removeProp('selected');
 			})
 		})
 	</script>
