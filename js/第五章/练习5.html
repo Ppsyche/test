@@ -1,0 +1,22 @@
+<!-- 5.	编写一个非递归函数factorial(n)，计算12!-10!的结果。 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script language="javascript">
+		function factorial(n){
+			sum = 1;
+			for(var i=1; i<=n; i++){
+				sum *= i;
+			}
+			return sum;
+		}
+	</script>
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		document.write("12!-10!="+(factorial(12)-factorial(10)));
+	</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!-- 1.	编写程序，根据用户输入的数值，计算其平方、平方根和自然对数。 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var num = window.prompt("请输入N的值!","");
+		var num1;
+		num1 = Number(num);
+		if(num1 == 0){
+			num1 = parseInt(num);
+		}
+		if (isNaN(num1)) {
+			alert("您输入的不是一个数字!");
+		}
+		else{
+			document.write("平方为："+Math.pow(num1,2)+"<br>");
+			document.write("平方根为："+Math.sqrt(num1)+"<br>");
+			document.write("自然对数为："+Math.log(num1)+"<br>");
+		}
+	</script>	
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!-- 编写一个函数 f(x) = 4x2+3x+2，使用户通过提示对话框瑜入x的值，能得到相应的计算结果。 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script language="javascript">
+		function f(x){
+			var f = 4*x*x + 3*x + 2;
+			return f;
+		}
+	</script>
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var num = prompt("请输入X","");
+		var num1;
+		num1 = Number(num);
+		if(num1 == 0){
+			num1 = parseInt(num);
+		}
+		document.write("f(x)="+f(num1));
+	</script>
+</body>
+</html>

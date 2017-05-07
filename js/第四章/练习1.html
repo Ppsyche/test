@@ -1,0 +1,35 @@
+<!-- 1.	编写程序．通过用户输入的年龄判断是哪个年龄段的人（儿童：年龄＜14；青少年：14<=年龄＜24；青年：24<年龄＜40; 中年：40＜=年龄＜60; 老年：年龄>=60），并在页面上输出判断结果。 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var num = window.prompt("请输入您的年龄!","");
+		var num1;
+		num1 = Number(num);
+		if(num1 == 0){
+			num1 = parseInt(num);
+		}
+		if (isNaN(num1)) {
+			alert("您输入的不是一个数字!");
+		}
+		else if(num1 < 0){
+			alert("你在逗我吗");
+		}
+		else if(num1 < 14)
+			alert("儿童");
+		else if(num1 < 24)
+			alert("青少年");
+		else if(num1 < 40)
+			alert("青年");
+		else if(num1 < 60)
+			alert("中年");
+		else //if(num1 >= 60)
+			alert("老年");
+
+	</script>
+</body>
+</html>

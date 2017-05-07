@@ -1,0 +1,50 @@
+<!-- 7.	斐波纳契（Fibonacci）数列的第一项是1，第二项是1，以后各项都是前两项的和。试用递归函数和非递归函数各编写一个程序，求斐波纳契数列第N项的值。 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script language="javascript">
+		function Fibonacci1(N){
+			if(N==1 || N==2){
+				return 1;
+			}
+			else{
+				return Fibonacci1(N-1)+Fibonacci1(N-2);
+			}
+		}
+		function Fibonacci2(N){
+			if(N==1 || N==2){
+				return 1;
+			}
+			else{
+				var a = new Array(N);
+				a[0] = 1;
+				a[1] = 1;
+				for(var i=2; i<N; i++){
+					a[i] = a[i-1] + a[i-2];
+				}
+				return a[N-1];
+			}
+		}
+	</script>
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var num = window.prompt("请输入N的值!","");
+		var num1;
+		num1 = Number(num);
+		if(num1 == 0){
+			num1 = parseInt(num);
+		}
+		if (isNaN(num1)) {
+			alert("您输入的不是一个数字!");
+		}
+		else{
+			document.write("递归结果为：" + Fibonacci1(num1));
+			document.write("<br>");
+			document.write("非递归结果为：" + Fibonacci2(num1));
+		}
+	</script>
+</body>
+</html>

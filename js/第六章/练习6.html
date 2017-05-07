@@ -1,0 +1,63 @@
+<!-- 6.	设计一个程序，它（使用一个数组）接收用户输入的7门课程的成绩，然后在页面上显示其总成绩和平均分，并列出小于60的成绩。 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script>
+		// var stu = {
+		// 	grade1 : 0;
+		// 	// grade2 : 0;
+		// 	// grade3 : 0;
+		// 	// grade4 : 0;
+		// 	// grade5 : 0;
+		// 	// grade6 : 0;
+		// 	// grade7 : 0;
+		// 	all : 0;
+		// 	average : 0;
+		// }
+		// function grade(){
+		// 	stu.grade[0] = prompt("请输入成绩1","");
+		// 	stu.all += stu.grade[0];
+		// 	stu.grade[1] = prompt("请输入成绩2","");
+		// 	stu.all += stu.grade[1];
+		// 	stu.grade[2] = prompt("请输入成绩3","");
+		// 	stu.all += stu.grade[2];
+		// 	stu.grade[3] = prompt("请输入成绩4","");
+		// 	stu.all += stu.grade[3];
+		// 	stu.grade[4] = prompt("请输入成绩5","");
+		// 	stu.all += stu.grade[4];
+		// 	stu.grade[5] = prompt("请输入成绩6","");
+		// 	stu.all += stu.grade[5];
+		// 	stu.grade[6] = prompt("请输入成绩7","");
+		// 	stu.all += stu.grade[6];
+		// 	stu.average = stu.all/7;
+		// }
+		function grade(stu){
+			var all = 0;
+			var average = 0;
+			for (var i = 0; i < stu.length; i++) {
+				all += stu[i];
+			}
+			average = all/stu.length;
+			document.write("总分为：" + all + "<br>");
+			document.write("平均分为：" + average + "<br>");
+			document.write("不及格的成绩为：<br>");
+			for (var i = 0; i < stu.length; i++){
+				if(stu[i] < 60){
+					document.write("成绩"+(i+1)+"："+stu[i]+"<br>");
+				}
+			}
+		}
+	</script>
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var stu = new Array(7);
+		for(var i=0; i<stu.length; i++){
+			stu[i] = parseFloat(prompt("请输入第"+(i+1)+"门成绩",""));
+		}
+		grade(stu);
+	</script>
+</body>
+</html>

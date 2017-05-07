@@ -1,0 +1,24 @@
+<!-- 3.	设计一个页面，在页面上显示信息“现在是XXXX年XX月XX日Xx点XX分XX秒（星期X)，欢迎您的到访！“。 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var myDate=new Date();
+		var day;
+		switch(myDate.getDay()){
+			case 0 : day = "天";break;
+			case 1 : day = "一";break;
+			case 2 : day = "二";break;
+			case 3 : day = "三";break;
+			case 4 : day = "四";break;
+			case 5 : day = "五";break;
+			case 6 : day = "六";break;
+		}
+		document.write("现在是"+myDate.getFullYear() +"年"+(myDate.getMonth()+1)+"月"+myDate.getDate()+"日"+myDate.getHours()+"点"+myDate.getMinutes()+"分"+myDate.getSeconds()+"秒（星期"+day+"），欢迎您的到访")
+	</script>
+</body>
+</html>

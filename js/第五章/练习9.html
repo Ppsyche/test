@@ -1,0 +1,24 @@
+<!-- 9.	利用全局变量和函数，设计模拟幸运数字机游戏。设卒运数字为8，每次由计算机随机产生3个1-9之间(包括1和9）的随机数，当这3个随机数中有一个数字为8时，就算赢了一次，要求利用函数计算获胜率。 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script language="javascript">
+		function formula(x,y,t){
+			var n = 0;
+			for(var i=x; i<=y; i++)
+				for(var j=x; j<=y; j++)
+					for(var k=x; k<=y; k++)
+						if(i==t || j==t || k==t)
+							n++;
+			return n/Math.pow((y-x+1),3);
+		}
+	</script>
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		document.write("获胜率为：" + formula(1,9,8));
+	</script>
+</body>
+</html>

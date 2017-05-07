@@ -1,0 +1,29 @@
+<!-- 3.	编写一个判断某个非负整数是否能够同时被3,5,7整除的函数，然后在页面上输出1~1000之间所有能同时被3,5,7整除的整数，并要求每行显示6个这样的数。 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script language="javascript">
+		function formula(x){
+			if(!(x%3 || x%5 || x%7))
+				return true;
+			else
+				return false;
+		}
+	</script>
+	<title>Document</title>
+</head>
+<body>
+	<script>	
+		var n = 0;
+		for(var i=1; i<=1000; i++){
+			if(formula(i)){
+				document.write(i+" ");
+				n++;
+				if(n%6 == 0)
+					document.write("<br>");
+			}
+		}
+	</script>
+</body>
+</html>
