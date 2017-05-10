@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>豆瓣广告轮播</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style:none;
+			text-decoration: none;
+		}
+		.clear{
+			clear: both;
+		}
+		#db-advert-box{
+			font: 12px Arial, Helvetica, sans-serif;
+			width: 600px;
+		}
+		#db-advert-box .title{
+			background: #f6f5f5;	
+			border-bottom: 1px solid #ccc;
+		}
+		#db-advert-box .title ul{
+			padding: 5px 0 0 20px;
+		}
+		#db-advert-box .title li{
+			display: inline-block;
+			margin-right: 10px;
+			padding: 5px 7px 2px;
+		}
+		#db-advert-box .title li.selected{
+			background: #fff;
+		}
+		#db-advert-box .title a{
+			color: #369;
+		}
+		#db-advert-box .content{
+			padding: 5px 0 0 20px;
+		}
+		#db-advert-box .content .storey-item{
+			border-bottom: 1px dashed #ccc;
+		}
+		#db-advert-box .content .item{
+			float: left;
+			width: 49%;
+			margin: 20px 0;
+		}
+		#db-advert-box .content img{
+			width: 48px;
+			height: 48px;
+			float: left;
+			margin-right: 10px;
+		}
+		#db-advert-box .content a{
+			color: #369;
+		}
+		#db-advert-box .content a:hover{
+			color: #fff;
+		    background: #039;
+		}
+		
+		#db-advert-box .content p{
+			margin-top: 3px;
+		}
+		#db-advert-box .content .block{
+			display: block;
+		}
+		#db-advert-box .content .none{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="db-advert-box">
+		<div class="title">
+			<ul>
+				<li class="selected"><a href="#">生活</a></li>
+				<li><a href="#">兴趣</a></li>
+				<li><a href="#">文化艺术</a></li>
+				<li><a href="#">音乐电影</a></li>
+				<li><a href="#">本地</a></li>
+				<li><a href="#">其他</a></li>
+			</ul>
+		</div>
+		<div class="content">
+			<div class="content0 block">
+				<div class="storey-item">
+					<div class="item">
+						<a href="#"><img src="img/g131612-4.jpg" alt=""></a>
+						<a href="#">法兰西情结: 美酒，美食，...</a>(117)
+						<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+					<div class="item">
+						<a href="#"><img src="img/g166185-3.jpg" alt="我们一起写日记"></a>
+						<a href="#">我们一起写日记</a>(5000)
+						<p>每人发起一个发言，定时或不定时的给自己回复一下，给自己...</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="storey-item">
+					<div class="item">
+						<a href="#"><img src="img/g361153-1.jpg" alt="看起来就是比你们年轻"></a>
+						<a href="#">看起来就是比你们年轻</a>(1765)
+						<p>我们好年轻～  我们好娇嫩～  我们都是无敌青春美少女～～...</p>
+					</div>
+					<div class="item">
+						<a href="#"><img src="img/g205089-1.jpg" alt="那一年 我们不懂爱情"></a>
+						<a href="#">那一年 我们不懂爱情</a>(4924)
+						<p>如果时光可以倒流,我们还愿意回到那一年吗?弥补过去的遗憾吗...</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="storey-item">
+					<div class="item">
+						<a href="#"><img src="img/g225599-3.jpg" alt="让我们一起做晨型人吧！"></a>
+						<a href="#">让我们一起做晨型人吧！</a>(5000)
+						<p>在日本，有一种叫做“晨型人”的新型族群正在迅速掀起风潮。...</p>
+					</div>
+					<div class="item">
+						<a href="#"><img src="img/g12238-2.jpg" alt="爱狗俱乐部"></a>
+						<a href="#">爱狗俱乐部</a>(1124)
+						<p>狗狗~~~爱狗俱乐部． 欢迎大家加入　讨论一些养狗心得．...</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="content1 none">
+				<div class="storey-item">
+					<div class="item">
+						<a href="#"><img src="img/g147604-45.jpg" alt=""></a>
+						<a href="#">法兰西情结: 美酒，美食，...</a>(117)
+						<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+					<div class="item">
+						<a href="#"><img src="img/g58422-9.jpg" alt="我们一起写日记"></a>
+						<a href="#">我们一起写日记</a>(5000)
+						<p>每人发起一个发言，定时或不定时的给自己回复一下，给自己...</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="storey-item">
+					<div class="item">
+						<a href="#"><img src="img/g320386-4.jpg" alt="看起来就是比你们年轻"></a>
+						<a href="#">看起来就是比你们年轻</a>(1765)
+						<p>我们好年轻～  我们好娇嫩～  我们都是无敌青春美少女～～...</p>
+					</div>
+					<div class="item">
+						<a href="#"><img src="img/g201001-7.jpg" alt="那一年 我们不懂爱情"></a>
+						<a href="#">那一年 我们不懂爱情</a>(4924)
+						<p>如果时光可以倒流,我们还愿意回到那一年吗?弥补过去的遗憾吗...</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="storey-item">
+					<div class="item">
+						<a href="#"><img src="img/g61581-1.jpg" alt="让我们一起做晨型人吧！"></a>
+						<a href="#">让我们一起做晨型人吧！</a>(5000)
+						<p>在日本，有一种叫做“晨型人”的新型族群正在迅速掀起风潮。...</p>
+					</div>
+					<div class="item">
+						<a href="#"><img src="img/g99630-1.jpg" alt="爱狗俱乐部"></a>
+						<a href="#">爱狗俱乐部</a>(1124)
+						<p>狗狗~~~爱狗俱乐部． 欢迎大家加入　讨论一些养狗心得．...</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="content2 none">
+				<div class="storey-item">
+					<div class="item">
+						<a href="#"><img src="img/g131612-4.jpg" alt=""></a>
+						<a href="#">法兰西情结: 美酒，美食，...</a>(117)
+						<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+					<div class="item">
+						<a href="#"><img src="img/g166185-3.jpg" alt="我们一起写日记"></a>
+						<a href="#">我们一起写日记</a>(5000)
+						<p>每人发起一个发言，定时或不定时的给自己回复一下，给自己...</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="storey-item">
+					<div class="item">
+						<a href="#"><img src="img/g361153-1.jpg" alt="看起来就是比你们年轻"></a>
+						<a href="#">看起来就是比你们年轻</a>(1765)
+						<p>我们好年轻～  我们好娇嫩～  我们都是无敌青春美少女～～...</p>
+					</div>
+					<div class="item">
+						<a href="#"><img src="img/g205089-1.jpg" alt="那一年 我们不懂爱情"></a>
+						<a href="#">那一年 我们不懂爱情</a>(4924)
+						<p>如果时光可以倒流,我们还愿意回到那一年吗?弥补过去的遗憾吗...</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="storey-item">
+					<div class="item">
+						<a href="#"><img src="img/g225599-3.jpg" alt="让我们一起做晨型人吧！"></a>
+						<a href="#">让我们一起做晨型人吧！</a>(5000)
+						<p>在日本，有一种叫做“晨型人”的新型族群正在迅速掀起风潮。...</p>
+					</div>
+					<div class="item">
+						<a href="#"><img src="img/g12238-2.jpg" alt="爱狗俱乐部"></a>
+						<a href="#">爱狗俱乐部</a>(1124)
+						<p>狗狗~~~爱狗俱乐部． 欢迎大家加入　讨论一些养狗心得．...</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="content3 none">
+				<div class="storey-item">
+					<div class="item">
+						<a href="#"><img src="img/g131612-4.jpg" alt=""></a>
+						<a href="#">法兰西情结: 美酒，美食，...</a>(117)
+						<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+					<div class="item">
+						<a href="#"><img src="img/g166185-3.jpg" alt="我们一起写日记"></a>
+						<a href="#">我们一起写日记</a>(5000)
+						<p>每人发起一个发言，定时或不定时的给自己回复一下，给自己...</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="storey-item">
+					<div class="item">
+						<a href="#"><img src="img/g361153-1.jpg" alt="看起来就是比你们年轻"></a>
+						<a href="#">看起来就是比你们年轻</a>(1765)
+						<p>我们好年轻～  我们好娇嫩～  我们都是无敌青春美少女～～...</p>
+					</div>
+					<div class="item">
+						<a href="#"><img src="img/g205089-1.jpg" alt="那一年 我们不懂爱情"></a>
+						<a href="#">那一年 我们不懂爱情</a>(4924)
+						<p>如果时光可以倒流,我们还愿意回到那一年吗?弥补过去的遗憾吗...</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="storey-item">
+					<div class="item">
+						<a href="#"><img src="img/g225599-3.jpg" alt="让我们一起做晨型人吧！"></a>
+						<a href="#">让我们一起做晨型人吧！</a>(5000)
+						<p>在日本，有一种叫做“晨型人”的新型族群正在迅速掀起风潮。...</p>
+					</div>
+					<div class="item">
+						<a href="#"><img src="img/g12238-2.jpg" alt="爱狗俱乐部"></a>
+						<a href="#">爱狗俱乐部</a>(1124)
+						<p>狗狗~~~爱狗俱乐部． 欢迎大家加入　讨论一些养狗心得．...</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="content4 none">
+				<div class="storey-item">
+					<div class="item">
+						<a href="#"><img src="img/g131612-4.jpg" alt=""></a>
+						<a href="#">法兰西情结: 美酒，美食，...</a>(117)
+						<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+					<div class="item">
+						<a href="#"><img src="img/g166185-3.jpg" alt="我们一起写日记"></a>
+						<a href="#">我们一起写日记</a>(5000)
+						<p>每人发起一个发言，定时或不定时的给自己回复一下，给自己...</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="storey-item">
+					<div class="item">
+						<a href="#"><img src="img/g361153-1.jpg" alt="看起来就是比你们年轻"></a>
+						<a href="#">看起来就是比你们年轻</a>(1765)
+						<p>我们好年轻～  我们好娇嫩～  我们都是无敌青春美少女～～...</p>
+					</div>
+					<div class="item">
+						<a href="#"><img src="img/g205089-1.jpg" alt="那一年 我们不懂爱情"></a>
+						<a href="#">那一年 我们不懂爱情</a>(4924)
+						<p>如果时光可以倒流,我们还愿意回到那一年吗?弥补过去的遗憾吗...</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="storey-item">
+					<div class="item">
+						<a href="#"><img src="img/g225599-3.jpg" alt="让我们一起做晨型人吧！"></a>
+						<a href="#">让我们一起做晨型人吧！</a>(5000)
+						<p>在日本，有一种叫做“晨型人”的新型族群正在迅速掀起风潮。...</p>
+					</div>
+					<div class="item">
+						<a href="#"><img src="img/g12238-2.jpg" alt="爱狗俱乐部"></a>
+						<a href="#">爱狗俱乐部</a>(1124)
+						<p>狗狗~~~爱狗俱乐部． 欢迎大家加入　讨论一些养狗心得．...</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="content5 none">
+				<div class="storey-item">
+					<div class="item">
+						<a href="#"><img src="img/g131612-4.jpg" alt=""></a>
+						<a href="#">法兰西情结: 美酒，美食，...</a>(117)
+						<p>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</p>
+					</div>
+					<div class="item">
+						<a href="#"><img src="img/g166185-3.jpg" alt="我们一起写日记"></a>
+						<a href="#">我们一起写日记</a>(5000)
+						<p>每人发起一个发言，定时或不定时的给自己回复一下，给自己...</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="storey-item">
+					<div class="item">
+						<a href="#"><img src="img/g361153-1.jpg" alt="看起来就是比你们年轻"></a>
+						<a href="#">看起来就是比你们年轻</a>(1765)
+						<p>我们好年轻～  我们好娇嫩～  我们都是无敌青春美少女～～...</p>
+					</div>
+					<div class="item">
+						<a href="#"><img src="img/g205089-1.jpg" alt="那一年 我们不懂爱情"></a>
+						<a href="#">那一年 我们不懂爱情</a>(4924)
+						<p>如果时光可以倒流,我们还愿意回到那一年吗?弥补过去的遗憾吗...</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="storey-item">
+					<div class="item">
+						<a href="#"><img src="img/g225599-3.jpg" alt="让我们一起做晨型人吧！"></a>
+						<a href="#">让我们一起做晨型人吧！</a>(5000)
+						<p>在日本，有一种叫做“晨型人”的新型族群正在迅速掀起风潮。...</p>
+					</div>
+					<div class="item">
+						<a href="#"><img src="img/g12238-2.jpg" alt="爱狗俱乐部"></a>
+						<a href="#">爱狗俱乐部</a>(1124)
+						<p>狗狗~~~爱狗俱乐部． 欢迎大家加入　讨论一些养狗心得．...</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>

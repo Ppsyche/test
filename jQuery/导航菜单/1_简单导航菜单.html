@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>简单导航菜单</title>
+	<style>
+		html,body,ul,li{
+			padding: 0;
+			margin: 0;
+			list-style:none;
+			font-size: 18px;
+		}
+		.hmain{
+			float: left;
+			width: 150px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			background: #ccc;
+		}
+		.hmain a{
+    		text-decoration:none;
+			display:block;
+			color: #000;
+		}
+		.hmain a.down{
+			background: url("img/down.gif") no-repeat 33px 14px;
+		}
+		.hmain a.up{
+			background: url("img/up.gif") no-repeat 33px 14px;
+		}
+		.hmain li{
+			background: #777;
+		}
+		.hmain ul{
+			display: none;
+		}
+		.hmain ul a{
+			color: #fff;
+		}
+/*		.hmain ul:hover{
+			display: block;
+		}*/
+	</style>
+	<script src="../jquery-1.12.4.min.js"></script>
+	<script>
+		$(function(){
+			$(".hmain").on("mouseenter",function(){
+				$(this).children("ul").slideDown("slow");
+				$(this).children("a").addClass("up").removeClass("down");
+			})
+			$(".hmain").on("mouseleave",function(){
+				$(this).children("ul").slideUp("slow");
+				$(this).children("a").addClass("down").removeClass("up");
+			})
+		})
+	</script>
+</head>
+<body>
+	<ul>
+        <li class="hmain">
+            <a href="#" class="down">菜单项1</a>
+            <ul>
+                <li>
+                    <a href="#">子菜单11</a>
+                </li>
+                <li>
+                    <a href="#">子菜单12</a>
+                </li>
+            </ul>
+        </li>
+        <li class="hmain">
+            <a href="#" class="down">菜单项2</a>
+            <ul>
+                <li>
+                    <a href="#">子菜单21</a>
+                </li>
+                <li>
+                    <a href="#">子菜单22</a>
+                </li>
+            </ul>
+        </li>
+        <li class="hmain">
+            <a href="#" class="down">菜单项3</a>
+            <ul>
+                <li>
+                    <a href="#">子菜单31</a>
+                </li>
+                <li>
+                    <a href="#">子菜单32</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
