@@ -28,12 +28,11 @@
 			display: inline-block;
 			margin-right: 10px;
 			padding: 5px 7px 2px;
+			color: #369;
+			cursor:pointer;
 		}
 		#db-advert-box .title li.selected{
 			background: #fff;
-		}
-		#db-advert-box .title a{
-			color: #369;
 		}
 		#db-advert-box .content{
 			padding: 5px 0 0 20px;
@@ -63,28 +62,59 @@
 		#db-advert-box .content p{
 			margin-top: 3px;
 		}
-		#db-advert-box .content .block{
+		/*#db-advert-box .content .block{
 			display: block;
-		}
+		}*/
 		#db-advert-box .content .none{
 			display: none;
 		}
 	</style>
+	<script src="../jquery-1.12.4.min.js"></script>
+	<script>
+		$(function(){
+			var time;
+			var idx;
+			var $li = $("#db-advert-box .title li");
+			function run(){
+				time = setInterval(function(){
+					idx = $("#db-advert-box .title li.selected").index();
+					idx = (idx+1)%6;
+					$li.eq(idx).addClass("selected")
+						.siblings().removeClass("selected");
+					$("#db-advert-box .content .content"+idx)
+						.removeClass("none").siblings().addClass("none");
+				},2000);
+			}
+			run();
+			$li.on("click",function(){
+				$(this).addClass("selected").siblings().removeClass("selected");
+				$("#db-advert-box .content .content"+$(this).index())
+					.removeClass("none").siblings().addClass("none");
+				clearInterval(time);
+				run();
+			})
+			$("#db-advert-box .content").on("mouseover",function(){
+				clearInterval(time);
+			}).on("mouseout",function(){
+				run();
+			})
+		})
+	</script>
 </head>
 <body>
 	<div id="db-advert-box">
 		<div class="title">
 			<ul>
-				<li class="selected"><a href="#">生活</a></li>
-				<li><a href="#">兴趣</a></li>
-				<li><a href="#">文化艺术</a></li>
-				<li><a href="#">音乐电影</a></li>
-				<li><a href="#">本地</a></li>
-				<li><a href="#">其他</a></li>
+				<li class="selected">生活</li>
+				<li>兴趣</li>
+				<li>文化艺术</li>
+				<li>音乐电影</li>
+				<li>本地</li>
+				<li>其他</li>
 			</ul>
 		</div>
 		<div class="content">
-			<div class="content0 block">
+			<div class="content0">
 				<div class="storey-item">
 					<div class="item">
 						<a href="#"><img src="img/g131612-4.jpg" alt=""></a>
