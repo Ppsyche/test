@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#app{
+			width: 600px;
+		}
+		.red{
+			background: red;
+		}
+		.green{
+			background: green;
+		}
+		.left{
+			float: left;
+		}
+		.right{
+			float: right;
+		}
+		.all{
+			text-align: right;
+			height: 30px;
+			padding: 10px 20px;
+			width: 400px;
+		}
+		ul{
+			padding: 0;
+		}
+		li{
+			height: 30px;
+			padding: 10px 20px;
+			margin: 10px;
+			list-style:none;
+			width: 400px;
+		}
+		hr{
+			width: 500px;
+		}
+	</style>
+</head>
+<body>
+<center>
+	<div id="app">
+		<h1>services</h1>
+		<ul>
+			<li v-for="obj in arr" :class="{red:obj.active,green:!obj.active}" @click="change(obj)">
+				<span class="left">{{obj.name}}</span>
+				<span class="right">{{obj.price}}</span>
+			</li>
+		</ul>
+		<hr>
+		<div class="all">{{total()}}</div>
+	</div>
+</center>
+<script src="vue.js"></script>
+<script>
+	var vm = new Vue({
+		el:"#app",
+		data:{
+			arr:[
+				{name:'aaa',price:234,active:false},
+				{name:'bbb',price:254,active:false},
+				{name:'ccc',price:274,active:false},
+				{name:'ddd',price:302,active:false},
+				{name:'eee',price:204,active:false},
+			]
+		},
+		methods:{
+			change:function(obj){
+				obj.active = !obj.active;
+			},
+			total:function(){
+				var totalPrice = 0;
+				for(var i=0; i<this.arr.length; i++){
+					if(this.arr[i].active){
+						totalPrice += this.arr[i].price;
+					}
+				}
+				return totalPrice;
+			}
+		}
+	}) 
+</script>
+</body>
+</html>
