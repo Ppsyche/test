@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        input{
+            width: 180px;
+        }
+        ul{
+            border: 1px solid #ccc;
+            padding: 5px;
+            width: 170px;
+            margin-top: 3px;
+            list-style: none;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="msg" @keyup="filter"/><button @click="add">add</button>
+    <ul>
+        <li v-for="item in showItems">{{item}}</li>
+    </ul>
+</div>
+<script src="vue.js"></script>
+<script>
+   var vm = new Vue({
+        el:"#app",
+        data:{
+            msg:'',
+            items:[],
+            showItems:[]
+        },
+        methods:{
+            add: function () {
+                if(this.msg != ''){
+                    this.items.push(this.msg);
+                    this.msg = '';
+                    this.items.sort(function(a,b){
+                        return a > b;
+                    });
+                    this.showItems = this.items;
+                }
+            },
+            filter:function(){
+                var _msg = this.msg;
+                var arr = this.items.filter(function(val){
+                    return val.indexOf(_msg) > -1
+                });
+                this.showItems = arr;
+                if(this.showItems.length == 0){
+                    document.getElementsByTagName("ul")[0].style.display = "none";
+                }else{
+                    document.getElementsByTagName("ul")[0].style.display = "block";
+
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>
