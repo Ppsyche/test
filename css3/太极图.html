@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>太极图</title>
+	<style>
+		div{
+			border-radius: 50%;
+		}
+		.big{
+			width: 100px;
+			height: 200px;
+			border: 1px solid black;
+			padding-left: 100px;
+			background: #000;
+			position: relative;
+			-webkit-background-clip: content-box;
+			-moz-background-clip: content-box;
+			-ms-background-clip: content-box;
+			-o-background-clip: content-box;
+			background-clip: content-box;
+		}
+		.small{
+			width: 20px;
+			height: 20px;
+			position: relative;
+			right: 50px;
+		}
+		.small.top{
+			border: 40px solid #000;
+			background: #fff;
+		}
+		.small.bottom{
+			border: 40px solid #fff;
+			background: #000;
+		}
+	</style>
+</head>
+<body>
+	<div class="big">
+		<div class="small top"></div>
+		<div class="small bottom"></div>
+	</div>
+</body>
+</html>

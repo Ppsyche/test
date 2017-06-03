@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>时钟</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#container{
+			margin: 200px auto;
+			width: 202px;
+			position: relative;
+		}
+		#clock{
+			width: 200px;
+			height: 200px;
+			border: 1px solid black;
+			border-radius: 50%;
+			position: relative;
+			/*background: url(img8.jpg);*/
+			background: #E6E6FA;
+		}
+		#clock li{
+			list-style: none;
+			width: 2px;
+			height: 4px;
+			background: #00f;
+			position: absolute;
+			left: 50%;
+			-webkit-transform-origin:1px 100px;
+		}
+		#clock li:nth-child(5n+1){
+			height: 8px;
+			background: #f0f;
+		}
+		.time{
+			width: 2px;
+			position: absolute;
+			left: 101px;
+			top: 101px;
+			-webkit-transform-origin:0 0;
+		}
+		#hour{
+			width: 4px;
+			height: 40px;
+			background: #ff0;
+			/*top: 60px;*/
+			/*-webkit-transform:rotate(60deg);*/
+		}
+		#minute{
+			width: 3px;
+			height: 60px;
+			background: #0ff;
+			/*top: 40px;*/
+			/*-webkit-transform:rotate(120deg);*/
+		}
+		#second{
+			height: 80px;
+			background: #f00;
+			/*top: 20px;*/
+			/*-webkit-transform:rotate(180deg);*/
+		}
+		#centre{
+			width: 10px;
+			height: 10px;
+			background: #ccc;
+			border: 1px solid #ccc;
+			position: absolute;
+			left: 96px;
+			top: 96px;
+			border-radius: 50%;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<ul id="clock">
+			
+		</ul>
+		<div id="hour" class="time"></div>
+		<div id="minute" class="time"></div>
+		<div id="second" class="time"></div>
+		<div id="centre"></div>
+	</div>
+<script>
+	var oClock = document.getElementById('clock');
+	var oHour = document.getElementById('hour');
+	var oMinute = document.getElementById('minute');
+	var oSecond = document.getElementById('second');
+    var html = "";
+	for(var i=0; i<60; i++){
+		html += "<li style='-webkit-transform:rotate("+i*6+"deg)'></li>";
+	}
+	oClock.innerHTML = html;
+
+	
+	// d.getHours();getMinutes() getSeconds()
+	setInterval(function(){
+		var time = new Date();
+		var second = time.getSeconds()*6+180;
+		var minute = time.getMinutes()*6+180+time.getSeconds()*0.1;
+		var hour = time.getHours()*30+180+time.getMinutes()*0.5;
+		oSecond.style.transform = "rotate("+second+"deg)";
+		oMinute.style.transform = "rotate("+minute+"deg)";
+		oHour.style.transform = "rotate("+hour+"deg)";
+	},100);
+</script>
+</body>
+</html>
