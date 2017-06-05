@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图集</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #stage{
+            width: 1000px ;
+            height: 300px;
+            background: #cccccc;
+            margin:50px auto;
+            box-shadow:0 0 3px 3px rgba(0,0,0,0.5);
+            -webkit-perspective: 800px;
+            -moz-perspective: 800px;
+            -ms-perspective: 800px;
+            perspective: 800px;
+            -webkit-perspective-origin: center -20%;
+            -moz-perspective-origin: center -20%;
+            -ms-perspective-origin: center -20%;
+            perspective-origin: center -20%;
+            position: relative;
+        }
+        #container{
+            width: 128px;
+            height: 100px;
+            position: absolute;
+            /*margin:100px auto;*/
+            top: 80px;
+            left: 400px;
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            -ms-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            -webkit-transition: transform 2s ease;
+            -o-transition: transform 2s ease;
+            transition: transform 2s ease;
+        }
+        #container img{
+            width: 128px;
+            height: 100px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            /*-webkit-transition: transform 2s ease;
+            -o-transition: transform 2s ease;
+            transition: transform 2s ease;*/
+            /*-webkit-transform: rotateY(0deg) translateZ(0px);
+            -moz-transform: rotateY(0deg) translateZ(0px);
+            -ms-transform: rotateY(0deg) translateZ(0px);
+            -o-transform: rotateY(0deg) translateZ(0px);
+            transform: rotateY(0deg) translateZ(0px);*/
+        }
+    </style>
+</head>
+<body>
+    <div id="stage">
+        <div id="container">
+            <img src="img/1.jpg" alt="">
+            <img src="img/2.jpg" alt="">
+            <img src="img/3.jpg" alt="">
+            <img src="img/4.jpg" alt="">
+            <img src="img/5.jpg" alt="">
+            <img src="img/6.jpg" alt="">
+            <img src="img/7.jpg" alt="">
+            <img src="img/8.jpg" alt="">
+            <img src="img/9.jpg" alt="">
+            <!-- <div class="img"></div>
+            <div class="img"></div>
+            <div class="img"></div>
+            <div class="img"></div>
+            <div class="img"></div>
+            <div class="img"></div>
+            <div class="img"></div>
+            <div class="img"></div>
+            <div class="img"></div> -->
+        </div>
+    </div>
+    <script>
+        oContainer = document.getElementById("container");
+        aImg = oContainer.getElementsByTagName("img");
+        for (var i = 0; i < aImg.length; i++) {
+            aImg[i].index = i;
+            aImg[i].onload = function(){
+                this.style.transition = "transform 2s ease "+(8-this.index)*100+"ms";
+                this.style.transform = "rotateY("+this.index*-40+"deg) translateZ(200px)";
+                this.style.WekitTransform = "rotateY("+this.index*-40+"deg) translateZ(200px)"; 
+            }
+            aImg[i].onclick = function(){
+                oContainer.style.transform = "rotateY("+this.index*40+"deg)";
+            }
+        }
+        
+    </script>
+</body>
+</html>
