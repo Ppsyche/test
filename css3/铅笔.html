@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>铅笔</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#pencil{
+			margin: 50px auto;
+			width: 60px;
+			height: 500px;
+		}
+		#pencil .top{
+			width: 0px;
+			height: 0px;
+			border-bottom: 60px solid #ffe8c6;
+			border-left: 30px solid transparent;
+			border-right: 30px solid transparent;
+			position: relative;
+		}
+		#pencil .top:before{
+			content: "";
+			border-bottom: 20px solid #000;
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+			position: absolute;
+			left: -10px;
+		}
+		#pencil .center{
+			width: 60px;
+			height: 300px;
+			background: #f9dc32;
+			position: relative;
+		}
+		#pencil .center:before{
+			content: "";
+			border:14px solid transparent;
+			border-bottom-color: #f9dc32;
+			position: absolute;
+			top: -28px;
+			left: 16px;
+		}
+		#pencil .center div{
+			width: 16px;
+			height: 300px;
+			background: #f2d41c;
+			position: relative;
+		}
+		#pencil .center div:before{
+			content: "";
+			border:8px solid transparent;
+			border-bottom-color: #f2d41c;
+			position: absolute;
+			top: -16px;		
+		}
+		#pencil .center .left{
+			float: left;
+		}
+		#pencil .center .right{
+			float: right;
+		}
+		#pencil .bottom{
+			width: 60px;
+			height: 30px;
+			border-radius: 0 0 10px 10px;
+			-webkit-border-radius: 0 0 10px 10px;
+			-moz-border-radius: 0 0 10px 10px;
+            -ms-border-radius: 0 0 10px 10px;
+            -o-border-radius: 0 0 10px 10px;
+			background: linear-gradient(to bottom, #000, #ffbf00, #000, #ffbf00, #000);
+			background: -webkit-linear-gradient(to bottom, #000, #ffbf00, #000, #ffbf00, #000);
+		}
+	</style>
+</head>
+<body>
+	<div id="pencil">
+		<div class="top"></div>
+		<div class="center">
+			<div class="left"></div>
+			<div class="right"></div>
+		</div>
+		<div class="bottom"></div>
+	</div>
+</body>
+</html>

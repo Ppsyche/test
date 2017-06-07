@@ -4,42 +4,69 @@
 	<meta charset="UTF-8">
 	<title>太极图</title>
 	<style>
-		div{
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 602px;
+			height: 602px;
+			margin: 0 auto;
+		}
+		#box div{
 			border-radius: 50%;
 		}
 		.big{
-			width: 100px;
-			height: 200px;
+			width: 300px;
+			height: 600px;
 			border: 1px solid black;
-			padding-left: 100px;
+			padding-left: 300px;
 			background: #000;
-			position: relative;
+			position: relative;	
 			-webkit-background-clip: content-box;
 			-moz-background-clip: content-box;
 			-ms-background-clip: content-box;
 			-o-background-clip: content-box;
 			background-clip: content-box;
+			-webkit-animation:run 5s linear infinite;
+            -o-animation:run 5s linear infinite;
+            animation:run 5s linear infinite;
 		}
+		@keyframes run {
+            0%{
+
+            }
+            100%{
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
 		.small{
-			width: 20px;
-			height: 20px;
+			width: 60px;
+			height: 60px;
 			position: relative;
-			right: 50px;
+			right: 150px;
 		}
 		.small.top{
-			border: 40px solid #000;
+			border: 120px solid #000;
 			background: #fff;
 		}
 		.small.bottom{
-			border: 40px solid #fff;
+			border: 120px solid #fff;
 			background: #000;
 		}
 	</style>
 </head>
 <body>
+<div id="box">
 	<div class="big">
 		<div class="small top"></div>
 		<div class="small bottom"></div>
 	</div>
+</div>
+	
 </body>
 </html>
