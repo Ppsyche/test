@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- meta:vp -->
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#heard,#title,#bner,#content,#footer,img{
+			width: 960px;
+		}
+		#heard,#title,#bner,#content,#footer{
+			margin: 50px auto 0;
+		}
+		#content{
+			margin-top: 0;
+		}
+		#heard,#title,#footer{
+			background: #ccc;
+			font-size: 40px;
+			text-align: center;
+			line-height: 100px;
+			height: 100px;
+		}
+		#img-box{
+            background:url("img/01.jpg") 0 0 no-repeat;
+            background-size: cover;
+            height: 0px;
+            padding-top: 56%;
+        }
+		#left,#right{
+			height: 300px;
+			display: table;
+		}
+		#left p,#right p{
+			vertical-align: middle;
+            text-align: center;
+            display: table-cell;
+		}
+		#left{
+			float: left;
+			width: 630px;
+			background: #ff0;
+		}
+		#right{
+			float: right;
+			width: 300px;
+			background: #0ff;
+			
+		}
+		#footer{
+			clear: both;
+		}
+		@media (max-width: 959px){
+			#heard,#title,#bner,#content,#footer,img{
+				width: 100%;
+			}
+			#heard,#title,#bner,#content,#footer{
+				margin: 19% auto 0;
+			}
+			#content{
+				margin-top: 0;
+			}
+			#img-box{
+                background-image:url("img/01_s_2x.jpg") ;
+            }
+			#left{
+				width: 56%;
+			}
+			#right{
+				width: 36%;
+			}
+
+		}
+		@media (max-width: 480px){
+			#img-box{
+                background-image:url("img/01_s.jpg") ;
+            }
+			#left{
+				width: 100%;
+			}
+			#right{
+				width: 100%;		
+			}
+		}
+	</style>
+</head>
+<body>
+	<div id="heard">页头</div>
+	<div id="title">标题</div>
+	<div id="bner">
+		<!-- <img src="img/01.jpg" alt=""> -->
+		<div id="img-box"></div>
+	</div>
+	<div id="content">
+        <div id="left">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem erat, egestas quis luctus ut, rhoncus vitae risus. Integer venenatis libero sit amet sapien dictum, quis bibendum mi volutpat. Cras pretium quam quis magna facilisis, eget feugiat nisi lacinia.
+            </p>
+        </div>
+        <div id="right">
+            <p>Donec dolor arcu, interdum sed turpis faucibus, placerat ultricies felis. Donec pulvinar gravida rhoncus. Suspendisse vestibulum est eget dolor lobortis.</p>
+        </div>
+    </div>
+    <div id="footer">页脚</div>
+</body>
+</html>
