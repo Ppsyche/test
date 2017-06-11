@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>照片墙</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 100%;
+			display: block;
+		}
+		img{
+			width: 24%;	
+			float: left;
+			border: 0.5vw solid #000;
+		}
+		#img{
+			width: 100vw;
+			height: 100vh;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<img src="img/thumbs/1.jpg" alt="">
+		<img src="img/thumbs/2.jpg" alt="">
+		<img src="img/thumbs/3.jpg" alt="">
+		<img src="img/thumbs/4.jpg" alt="">
+		<img src="img/thumbs/5.jpg" alt="">
+		<img src="img/thumbs/6.jpg" alt="">
+		<img src="img/thumbs/7.jpg" alt="">
+		<img src="img/thumbs/8.jpg" alt="">
+		<img src="img/thumbs/9.jpg" alt="">
+		<img src="img/thumbs/10.jpg" alt="">
+		<img src="img/thumbs/11.jpg" alt="">
+		<img src="img/thumbs/12.jpg" alt="">
+		<img src="img/thumbs/13.jpg" alt="">
+		<img src="img/thumbs/14.jpg" alt="">
+		<img src="img/thumbs/15.jpg" alt="">
+		<img src="img/thumbs/16.jpg" alt="">
+		<img src="img/thumbs/17.jpg" alt="">
+		<img src="img/thumbs/18.jpg" alt="">
+		<img src="img/thumbs/19.jpg" alt="">
+		<img src="img/thumbs/20.jpg" alt="">
+		<img src="img/thumbs/21.jpg" alt="">
+		<img src="img/thumbs/22.jpg" alt="">
+		<img src="img/thumbs/23.jpg" alt="">
+		<img src="img/thumbs/24.jpg" alt="">
+	</div>
+	<div id="img"></div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.min.js"></script>
+<script>
+	var idx;
+	$("#box img").on("tap",function(e){
+		idx = $(this).index()+1;
+		$("#box").css({'display' : 'none'});
+		$("#img").css({'display' : 'block',
+				'background' : '#000 url("img/'+idx+'.jpg") 0 50% no-repeat',
+				'background-size': 'contain'});	
+		e.preventDefault();
+	});
+	$("#img").on("tap",function(e){
+		$("#img").css({'display' : 'none'});
+		$("#box").css({'display' : 'block'});
+		e.preventDefault();
+	});
+	$("#img").on("swipeleft",function(){
+		idx++;
+		if(idx > 24)
+			idx -= 24;
+	  	$("#img").css({'background' : '#000 url("img/'+idx+'.jpg") 0 50% no-repeat',
+				'background-size': 'contain'});
+	});
+	$("#img").on("swiperight",function(){
+		idx += 23;
+		if(idx > 24)
+			idx -= 24;
+	  	$("#img").css({'background' : '#000 url("img/'+idx+'.jpg") 0 50% no-repeat',
+				'background-size': 'contain'});
+	});
+
+</script>
+</html>

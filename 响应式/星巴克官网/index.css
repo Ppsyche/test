@@ -1,0 +1,337 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-family: AvenirRoman, HelveticaNeue-Light, Helvetica Neue, arial, Hiragino Sans GB, 冬青黑体, Microsoft YaHei New, Microsoft Yahei, 微软雅黑, 宋体, SimSun, STXihei, 华文细黑, sans-serif;
+	font-weight: 400;
+	background: #ff0;
+}
+ul, ol{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+img{
+	border: 0;
+}
+.clear{
+	clear: both;
+}
+.more-bttn{
+	background: #b89f7a;
+	width: 106px;
+	height: 52px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 52px;
+	display: block;
+}
+.more-bttn:hover{
+	background: #af9369;
+}
+#header{
+	display:-webkit-box;
+	display:-moz-box;
+	display:-ms-box;
+	display:box;
+	width: 100%;
+	height: 100px;
+	border-top: 3px solid #f5f5f5;
+	background: #fff;
+	z-index: 99;
+	position: fixed;
+	border-bottom: 1px solid #ddd;
+    box-shadow: 0 -5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+#header .menu{
+	-webkit-box-flex: 5;
+	-moz-box-flex: 5;
+	-ms-box-flex: 5;
+	box-flex: 5;
+	padding: 30px 0 0 37px;
+}
+#header .menu img{
+	display: block;
+}
+#header .menu span{
+	font-size: 12px;
+	letter-spacing: 0.5px;
+	margin-left: 2px;
+}
+#header .logo{
+	-webkit-box-flex: 2;
+	-moz-box-flex: 2;
+	-ms-box-flex: 2;
+	box-flex: 2;
+	text-align: center;
+	padding: 15px 0;
+}
+#header .logo a{
+	display: inline-block;
+	width: 80%;
+	height: 80%;
+}
+#header .logo img{
+	width: 73px;
+}
+#header .login{
+	-webkit-box-flex: 5;
+	-moz-box-flex: 5;
+	-ms-box-flex: 5;
+	box-flex: 5;
+	text-align: right;
+	padding-right: 50px;
+	color: #4e4e4e;
+	font-size: 16px;
+	margin-top: 25px;
+}
+#header .login a{
+	color: #b89f7a;
+	font-weight: 700;
+	font-size: 15px;
+	margin-left: 5px;
+	display: inline-block;
+}
+#header .login a:first-child{
+	margin-right: 5px;
+}
+.banner{
+    position: relative;
+    width: 100%;
+}
+.banner img{
+    width: 100%;
+    display: block;
+}
+.banner .more1{
+    position: absolute;
+    bottom: 15px;
+    right: 29%;
+}
+.banner .more2{
+    position: absolute;
+    bottom: 15px;
+    right: 40%;
+}
+.banner .banner2,.banner .banner4{
+    display: none;
+}
+#rewards{
+    background: #0f0f0f;
+    color: #fff;
+    width: 100%;
+}
+#rewards .main{
+    width: 780px;
+    margin: 0 auto;
+}
+#rewards .mark{
+    width: 260px;
+    padding-left: 90px;
+    background: url("img/rewards_bg.png") 0 0 no-repeat;
+    float: left;
+    background-size: contain;
+    height: 140px;
+    padding: 80px 0 0 90px;
+}
+#rewards .mark img{
+	width: 160px;
+	height: 38px;
+}
+#rewards .mark p{
+	font-size: 18px;
+}
+#rewards .content{
+    width: 430px;
+    float: left;
+    padding-top: 40px;
+}
+#rewards .content h4{
+	font-size: 25px;
+}
+#rewards .content p{
+	font-size: 16px;
+}
+#rewards .content a{
+	color: #a98e67;
+	font-size: 14px;
+	display: inline-block;
+}
+#rewards .content .btn{
+	border:  2px solid #a98e67;	
+	padding: 14px 40px;
+	margin: 15px 10px 0 0;
+	font-weight: 600;
+}
+#rewards .content .btn:hover{
+	color: #fff;
+	background: #a98e67;
+}
+#rewards .content .more-btn{
+	margin-left: 30px;
+}
+#app{
+    background: url("img/app_bg.gif") 0 center repeat;
+}
+#app .app1{
+    overflow: hidden;
+    width: 70%;
+    margin:0 auto;
+    display: block;
+}
+#app .app-device{
+	width: 30%;
+	float: left;
+}
+#app .app-device img{
+    
+    width: 100%;
+    max-width: 200px;
+
+}
+#app .app-download{
+    float: right;
+    width: 20%;
+    margin-top:15px;
+    text-align: center;
+}
+#app .app-download img{
+    width: 130px;
+    height: 130px;
+}
+#app .app-content{
+    float: right;
+    width: 50%;
+    margin-top:45px;
+}
+#app .app-content p{
+    font-size: 25px;
+    color: #3d3d3d;
+}
+#app .app-content a{
+    color: #b89f7a;
+    font-size: 14px;
+}
+#app .app2{
+	width: 70%;
+    margin:0 auto;
+	display: none;
+	position: relative;
+}
+#app .app2 p{
+	width: 100%;
+	margin: 0 auto;
+	margin: 0;
+	padding: 10px 0;
+	font-size: 18px;
+}
+#app .app2-download img{
+	width: 50%;
+	float: right;
+	margin: 7% 3% 0 0;
+}
+#app .app2 .more-btn{
+	color: #967a50;
+	font-size: 14px;
+	position: absolute;
+	right: 3%;
+	bottom: 3%;
+}
+#bner-mod{
+	width: 100%;
+	height: 100%;
+}
+#bner-mod a{
+	display: inline-block;
+	width: 50%;
+	height: 50%;
+}
+#bner-mod .bner1{
+	background: url("img/tmall-cn.jpg") 0 0 no-repeat;
+	background-size: 100% 100%;
+}
+#bner-mod .bner2{
+	background: url("img/ft-grid (2)-20170328191448.jpg") 0 0 no-repeat;
+	background-size: 100% 100%;
+}
+@media screen and (max-width:991px){
+    .banner .banner1{
+        display: none;
+    }
+    .banner .banner2{
+        display: block;
+    }
+    .banner .more1{
+        bottom: 60px;
+        right: 15px;
+    }
+}
+
+@media screen and (max-width: 767px){
+    #header .menu{
+		padding-left: 15px;
+	}
+	#header .login{
+		font-size: 12px;
+		padding-right: 10px;
+	}
+	#header .login a{
+		font-size: 12px;
+	}
+	#rewards .main{
+		width: 100%;
+	}
+	#rewards .mark,#rewards .content{
+		width: 100%;
+		float: none;
+	}
+	#rewards .mark{
+        padding-left: 0;
+        text-align: center;
+    }
+    #rewards .mark img{
+        width: 160px;
+    }
+    #rewards .content{
+        text-align: center;
+        margin-top: -40px;
+    }
+    #rewards .content .btn{
+    	width: 70%;
+    	padding: 14px 0;
+    }
+    #rewards .content .more-btn{
+    	display: block;
+    	padding: 30px 10% 30px 0;
+    	text-align: right;
+    }
+    #app .app1{
+    	display: none;
+    }
+    #app .app2{
+		display: block;
+    }
+}
+@media screen and (max-width: 622px){
+	.banner .banner3{
+	    display: none;
+	}
+	.banner .banner4{
+	    display: block;
+	}
+	.banner .more2{
+	    bottom: 10px;
+	    right: 10px;
+	}
+}
+@media screen and (max-width: 425px) {
+    #header .logo{
+        width: 0;
+    }
+    #header .logo img{
+        width: 100%;
+    }
+}
+
