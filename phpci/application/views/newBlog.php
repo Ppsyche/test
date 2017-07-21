@@ -49,26 +49,26 @@
 	<div id="OSC_Content">
 <div id="AdminScreen">
     <div id="AdminPath">
-        <a href="index_logined.htm">返回我的首页</a>&nbsp;»
+        <a href="user/index_logined">返回我的首页</a>&nbsp;»
     	<span id="AdminTitle">发表博客</span>
     </div>
     <div id="AdminMenu"><ul>
 	<li class="caption">个人信息管理		
 		<ol>
-			<li><a href="inbox.htm">站内留言(0/1)</a></li>
-			<li><a href="profile.htm">编辑个人资料</a></li>
-			<li><a href="chpwd.htm">修改登录密码</a></li>
-			<li><a href="userSettings.htm">网页个性设置</a></li>
+			<li><a href="user/inbox">站内留言(0/1)</a></li>
+			<li><a href="user/profile">编辑个人资料</a></li>
+			<li><a href="user/chpwd">修改登录密码</a></li>
+			<li><a href="user/userSettings">网页个性设置</a></li>
 		</ol>
 	</li>		
 </ul>
 <ul>
 	<li class="caption">博客管理	
 		<ol>
-			<li class="current"><a href="newBlog.htm">发表博客</a></li>
-			<li><a href="blogCatalogs.htm">博客设置/分类管理</a></li>
-			<li><a href="blogs.htm">文章管理</a></li>
-			<li><a href="blogComments.htm">博客评论管理</a></li>
+			<li class="current"><a href="user/newBlog">发表博客</a></li>
+			<li><a href="user/blogCatalogs">博客设置/分类管理</a></li>
+			<li><a href="user/blogs">文章管理</a></li>
+			<li><a href="user/blogComments">博客评论管理</a></li>
 		</ol>
 	</li>
 </ul>
@@ -89,7 +89,7 @@
 	  <option value="<?php echo $v->CATALOG_ID ?>"><?php echo $v->NAME ?></option>
 	<?php } ?>
 	</select>
-	<a href="blogCatalogs.htm" onclick="return confirm('是否放弃当前编辑进入分类管理？');">分类管理»</a>
+	<a href="user/blogCatalogs" onclick="return confirm('是否放弃当前编辑进入分类管理？');">分类管理»</a>
 	</td>
   </tr>
   <tr><td class='t'>内容（必填） 

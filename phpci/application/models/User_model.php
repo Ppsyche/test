@@ -44,7 +44,7 @@
 			
 			return $allnum;
 		}
-		public function blog_all_fen($id,$per_page,$page){
+		public function blog_all_fen($id,$per_page,$page,$q){
 			// $sql="select * from t_blogs";
 			$this->db->select('*');
 			$this->db->from('t_blogs');
@@ -53,6 +53,10 @@
 			// $query=$this->db->query($sql);
 			if($id){
 				$this->db->where('t_blogs.CATALOG_ID',$id);
+			}
+			if($q){
+				$this->db->like('TITLE', $q);
+				$this->db->or_like('CONTENT', $q);
 			}
 			$query=$this->db->get();
 			$result=$query->result();
@@ -93,6 +97,49 @@
 			
 			return $query;
 		}	
+		public function delete_blog($id){
+			$query=$this->db->delete('t_blogs', array('BLOG_ID' => $id));
+			return $query;
+		}
+		public function inbox_forme($id){
+			$this->db->select('*');
+			$this->db->from('t_messages');
+			$this->db->join('t_users','t_users.USER_ID=t_messages.SENDER');
+			$this->db->where('t_messages.RECEIVER',$id);
+			$query=$this->db->get();
+			$result=$query->result();
+			return $result;
+		}
+		public function outbox_forme($id){
+			$this->db->select('*');
+			$this->db->from('t_messages');
+			$this->db->join('t_users','t_users.USER_ID=t_messages.RECEIVER');
+			$this->db->where('t_messages.SENDER',$id);
+			$query=$this->db->get();
+			$result=$query->result();
+			return $result;
+		}
+		public function user_one($id){
+			$this->db->select('*');
+			$this->db->from('t_users');
+			$this->db->where('USER_ID',$id);
+			$query=$this->db->get();
+			$result=$query->row();
+			return $result;
+		}
+		public function update_users($id,$name,$gender,$birthday,$province,$city,$signature){
+			$arr=array(
+				'NAME'=>$name,
+				'GENDER'=>$gender,
+				'BIRTHDAY'=>$birthday,
+				'PROVINCE'=>$province,
+				'CITY'=>$city,
+				'SIGNATURE'=>$signature
+			);
+			$this->db->where('USER_ID',$id);
+			$query=$this->db->update('t_users',$arr);
+			return $query;
+		}
 		
 	}
 
