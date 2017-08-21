@@ -10,7 +10,7 @@ function Leaf(){
 	}
 	this.speed = 5;
 	this.img = new Image();
-	this.img.src="img/"+(Math.floor(Math.random()*4)+1)+".png";
+	this.img.src="../img/"+(Math.floor(Math.random()*4)+1)+".png";
 	this.img.style.width = this.width+"px";
 	this.img.style.left = this.pos.left +"px";
 }
