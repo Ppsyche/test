@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function isOld(date){
+			var time = date.split('-');
+			var nowTime = new Date();
+			if(nowTime.getFullYear() - time[0] > 18){
+				return true;
+			}else if(nowTime.getFullYear() - time[0] < 18){
+				return false;
+			}
+			if(nowTime.getMonth() + 1 > time[1]){
+				return true;
+			}else if(nowTime.getMonth() + 1 < time[1]){
+				return false;
+			}
+			if(nowTime.getDate() >= time[2]){
+				return true;
+			}
+			return false;
+		}
+		console.log(isOld('2000-01-05'));
+		console.log(isOld('1999-02-14'));
+		console.log(isOld('1999-02-13'));
+		console.log(isOld('1989-12-26'));
+	</script>
+</body>
+</html>
