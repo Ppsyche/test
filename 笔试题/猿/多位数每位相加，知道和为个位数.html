@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		const jia = (num) => {
+		  	let str = num.toString();
+		  	let arr = str.split("");
+		 	let sum = 0;
+		  	for(let i = 0; i < arr.length; i++){
+		    	sum += Number(arr[i]);
+		  	}
+		  	if(sum > 9){
+		   		sum = jia(sum);
+		  	}
+		 	 return sum;
+		}
+		console.log(jia(48));
+	</script>
+</body>
+</html>

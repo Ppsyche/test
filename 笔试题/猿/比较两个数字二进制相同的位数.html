@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const fun = (num1, num2) =>{
+            let n = 0;
+            let m1 = num1.toString(2);
+            let m2 = num2.toString(2);
+            let len = m1.length - m2.length;
+            if(len > 0){
+                for (var i = 0; i < len; i++) {
+                  m2 = "0" + m2;
+                }
+            }else if(len < 0){
+                for (var i = 0; i > len ; i--) {
+                  m1 = "0" + m1;
+                }
+            }
+            let arrm1 = m1.split("");
+            let arrm2 = m2.split("");
+            for (var i = 0; i < arrm1.length; i++) {
+                if(arrm1[i] == arrm2[i]){
+                  n++;
+                }
+            }
+            return n;
+        }
+        console.log(fun(12, 21));
+        //位数相同的话
+        // const fun = (num1, num2) =>{
+        //   console.log(num1.toString(2));
+        //   console.log(num2.toString(2));
+        //   let str = ((~num1) ^ (~num2)).toString(2);
+        //   console.log(str);
+        //   let n = (str.match(/0/g)||[]).length;
+        //   return n;
+        // }
+        // console.log(fun(12, 21));
+    </script>
+</body>
+</html>
