@@ -1,0 +1,95 @@
+1.absolute 相对于 static 定位以外的第一个祖先元素进行定位
+  fixed 相对于浏览器窗口进行定位
+  relative 相对于其在普通流中的位置进行定位
+  static 默认值
+  nherit 从父元素继承
+2.goTop = function(){
+	document.body.scrollTop = document.documentElement.scrollTop = 0;
+  }
+3.使用方法不同
+  call(thisObj,a,b,c,d...)
+  apple(thisObj,[a,b,c,d..])
+4.借助原型链（ClassB继承ClassA）
+  function ClassA() {}
+  function ClassB() {
+       ClassA.call(this);
+  } 
+  ClassB.prototype = new ClassA(); 
+  ClassB.prototype.constructor = ClassB;
+5.创建一个空对象
+  创建__proto__
+  创建this
+  如果有return返回return的内容，没有返回这个对象
+6.跨域：由于浏览器的同源策略的限制而造成不同域内的js之间不能相互调用
+  解决方法：
+	JSONP（通过地址，凡是拥有scr这个属性的标签都可以）
+	http头加header('Access-Control-Allow-Origin:*');
+	window.name
+7.cookie存的少，sessionStorage和localStorage存储量远大于cookie
+  cookie和localStorage在所有同源窗口中都是共享的，sessionStorage在同一个浏览器窗口中共享
+  cookie在设置的过期时间前有效，sessionStorage在浏览器关闭前有效，localStorage始终有效
+8.块级
+	margin:0 auto;
+	父元素定位，position: absolute; left: 50%; margin-left: 负的宽度一半
+	justify-content: center
+  行级
+  	除上边方法外，text-align: center;
+9.
+function getQueryItems(url){
+  var reg = /^(?:([A-Za-z]+):)?(?:\/{0,3})([A-Za-z.\-0-9]+)(?::(\d+))?(\/[^#?]*)?(?:\?([^#]*))?(?:#(.*))?$/;
+
+  var result = url.match(reg);  //result中存储分解下来的结果
+  console.log(result);
+  var output = {};   //返回的结果
+  var item = ["scheme","host","port","path","queries","q","p","hash"];
+  //由于得到的键值对需要单独处理，所以先赋值前四项
+  for(var i=1;i<5;i++){
+    output[item[i-1]] = result[i];
+  }
+
+  //分解键值对
+  var queries = result[5];  //queries存储得到的键值对
+  var keyValues = queries.split("&");  //keyValues存储进一步分解结果 ["q=234", "p=abc"]
+  var querySplit = {};    //存储得到的键和值对象  {q: "234", p: "abc"}
+  for(let j=0;j<keyValues.length;j++){
+    querySplit[keyValues[j].split("=")[0]] = keyValues[j].split("=")[1];
+  }
+  output["queries"] = querySplit;
+
+  //将id加到对象中
+  output["hash"] = result[6];
+  console.log(output);
+}
+
+getQueryItems("https://www.example.com:8080/a/b/c?q=234&p=abc#header");
+10.
+function mergeSort(arr) { 
+    var len = arr.length;
+    if(len < 2) {
+        return arr;
+    }
+    var middle = Math.floor(len / 2),
+        left = arr.slice(0, middle),
+        right = arr.slice(middle);
+    return merge(mergeSort(left), mergeSort(right));
+}
+
+function merge(left, right)
+{
+    var result = [];
+    while (left.length && right.length) {
+        if (left[0] <= right[0]) {
+            result.push(left.shift());
+        } else {
+            result.push(right.shift());
+        }
+    }
+
+    while (left.length)
+        result.push(left.shift());
+
+    while (right.length)
+        result.push(right.shift());
+    return result;
+}
+11.
